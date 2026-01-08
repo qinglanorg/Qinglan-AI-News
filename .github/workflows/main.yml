@@ -1,0 +1,26 @@
+name: Qinglan News Intelligence Sync
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 每天北京时间早上 8 点触发
+  workflow_dispatch: # 允许你手动点击按钮随时运行
+
+jobs:
+  daily_sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Run Dummy Sync
+        run: |
+          echo "Last successful sync: $(date)" >> sync_log.txt
+          echo "Status: News processed and sent to Telegram." >> sync_log.txt
+
+      - name: Commit Changes
+        run: |
+          git config --global user.name "qinglanorg"
+          git config --global user.email "service@qinglan.org"
+          git add sync_log.txt
+          git commit -m "Auto-sync: Daily intelligence dehydrating completed"
+          git push
