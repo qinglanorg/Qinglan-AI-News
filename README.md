@@ -1,3 +1,4 @@
+![Sync Status](https://github.com/qinglanorg/Qinglan-AI-News/actions/workflows/main.yml/badge.svg)
 # Qinglan-AI-News
 青岚新闻：基于 AI 自动化的 Web3 每日脱水情报站。日处理 300+ 信息源，只留 10 条真干货。
 # 青岚新闻 (Qinglan AI News) 🤖
